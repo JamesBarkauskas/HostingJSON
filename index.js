@@ -120,7 +120,7 @@ app.get('/batman', (request, response) => {
 	response.send(JSON.stringify(batMan, null, 4))
 })
 
-// Return Batman as JSON.
+// Return Spiderman as JSON.
 var spiderMan = {
 	"firstName":"Peter",
 	"lastName":"Parker",
@@ -152,6 +152,35 @@ app.get('/spiderman', (request, response) => {
 	response.send(JSON.stringify(spiderMan, null, 4))
 })
 
+
+// Return Self as JSON.
+var Jimmy = {
+	"firstName":"James",
+	"lastName":"Barkauskas",
+	"preferredName":"Jimmy",
+	"email":"jbarkauskas@lewisu.edu",
+	"city":"Tinley Park",
+	"state":"IL",
+	"zip":"60487",
+	"favoriteHobby":"Frisbee golf",
+	"class":"cpsc-24500-001",
+	"room":"AS-104-A",
+	"startTime":"2 PM CT",
+	"seatNumber":"19",
+	"inPerson":[
+	],
+	"virtual":[
+		"Monday",
+		"Wednesday",
+		"Friday"
+	]
+}
+
+app.get('/self', (request, response) => {
+	console.log('Calling "/self" on the Node.js server.')
+	response.type('application/json')
+	response.send(JSON.stringify(Jimmy, null, 4))
+})
 
 // Custom 404 page.
 app.use((request, response) => {
